@@ -82,7 +82,14 @@ def generate_note(topic: dict) -> str:
         ],
         max_completion_tokens=4000,
     )
-    return response.choices[0].message.content
+    msg = response.choices[0].message
+    print("=== MESSAGE FIELDS ===")
+    print(repr(msg))
+    print("=== END FIELDS ===")
+    content = msg.content or ""
+    if not content and hasattr(msg, 'reasoning') and msg.reasoning:
+        content = msg.reasoning
+    return content
 
 
 def parse_sections(content: str) -> dict:
@@ -145,7 +152,7 @@ def main():
 
     raw = generate_note(topic)
     print("=== RAW OUTPUT ===")
-    print(raw[:2000])
+    print(repr(raw[:500]))
     print("=== END RAW ===")
     sections = parse_sections(raw)
     note = build_note(topic, sections, date_str)
