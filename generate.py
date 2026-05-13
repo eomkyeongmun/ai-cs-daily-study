@@ -74,22 +74,14 @@ def generate_note(topic: dict) -> str:
         "수치, 버전, 날짜 등 구체적 데이터는 틀릴 수 있으므로 신중하게 작성하세요."
     )
 
-    response = client.chat.completions.create(
+    response = client.responses.create(
         model="gpt-5.5",
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": build_prompt(topic)},
-        ],
-        max_completion_tokens=4000,
+        instructions=system_prompt,
+        input=build_prompt(topic),
+        reasoning={"effort": "medium"},
+        max_output_tokens=4000,
     )
-    msg = response.choices[0].message
-    print("=== MESSAGE FIELDS ===")
-    print(repr(msg))
-    print("=== END FIELDS ===")
-    content = msg.content or ""
-    if not content and hasattr(msg, 'reasoning') and msg.reasoning:
-        content = msg.reasoning
-    return content
+    return response.output_text
 
 
 def parse_sections(content: str) -> dict:
@@ -151,9 +143,6 @@ def main():
     print(f"Generating note for: {topic['topic']} - {topic['subtopic']}")
 
     raw = generate_note(topic)
-    print("=== RAW OUTPUT ===")
-    print(repr(raw[:500]))
-    print("=== END RAW ===")
     sections = parse_sections(raw)
     note = build_note(topic, sections, date_str)
     filepath = save_note(note, topic, date_str)
