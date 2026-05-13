@@ -67,14 +67,21 @@ def build_prompt(topic: dict) -> str:
 def generate_note(topic: dict) -> str:
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
+    system_prompt = (
+        "당신은 CS 학습 노트 작성 전문가입니다. "
+        "반드시 사실에 근거한 내용만 작성하세요. "
+        "확실하지 않거나 검증하기 어려운 내용은 반드시 '⚠️ 확인 필요: ' 접두사를 붙여 표시하세요. "
+        "수치, 버전, 날짜 등 구체적 데이터는 틀릴 수 있으므로 신중하게 작성하세요."
+    )
+
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-5.5",
         messages=[
-            {"role": "system", "content": "당신은 CS 학습 노트 작성 전문가입니다."},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": build_prompt(topic)},
         ],
-        temperature=0.7,
-        max_tokens=3000,
+        temperature=0.3,
+        max_tokens=4000,
     )
     return response.choices[0].message.content
 
