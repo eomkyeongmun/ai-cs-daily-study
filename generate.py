@@ -80,7 +80,6 @@ def generate_note(topic: dict) -> str:
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": build_prompt(topic)},
         ],
-        temperature=0.3,
         max_completion_tokens=4000,
     )
     return response.choices[0].message.content
