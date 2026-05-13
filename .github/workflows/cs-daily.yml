@@ -1,0 +1,41 @@
+name: CS Daily Study Note
+
+on:
+  schedule:
+    # 매일 오전 9시 KST (00:00 UTC)
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 수동 실행 허용
+
+jobs:
+  generate-note:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install openai
+
+      - name: Generate today's CS note
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python generate.py
+
+      - name: Commit and push note
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/ topics.json
+          git diff --cached --quiet || git commit -m "📚 Daily CS Note: $(date '+%Y-%m-%d')"
+          git push
