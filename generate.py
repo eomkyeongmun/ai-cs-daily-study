@@ -144,6 +144,9 @@ def main():
     print(f"Generating note for: {topic['topic']} - {topic['subtopic']}")
 
     raw = generate_note(topic)
+    print("=== RAW OUTPUT ===")
+    print(raw[:2000])
+    print("=== END RAW ===")
     sections = parse_sections(raw)
     note = build_note(topic, sections, date_str)
     filepath = save_note(note, topic, date_str)
