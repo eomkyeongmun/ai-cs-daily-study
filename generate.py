@@ -79,7 +79,7 @@ def generate_note(topic: dict) -> str:
         instructions=system_prompt,
         input=build_prompt(topic),
         reasoning={"effort": "medium"},
-        max_output_tokens=4000,
+        max_output_tokens=8000,
     )
     return response.output_text
 
