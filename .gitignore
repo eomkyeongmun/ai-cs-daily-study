@@ -3,3 +3,10 @@ __pycache__/
 .env
 *.env
 .DS_Store
+
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.smart-env/
+.obsidian/plugins/copilot/data.json
+.obsidian/plugins/smart-connections/data.json
