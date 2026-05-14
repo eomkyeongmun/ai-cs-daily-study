@@ -2,8 +2,8 @@ name: CS Daily Study Note
 
 on:
   schedule:
-    # 매일 오전 9시 KST (00:00 UTC)
-    - cron: '0 0 * * *'
+    # 매일 오전 7시 22분 KST
+    - cron: '22 22 * * *'
   workflow_dispatch:  # 수동 실행 허용
 
 jobs:
