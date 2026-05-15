@@ -1,0 +1,139 @@
+{
+  "current_index": 0,
+  "category_label": "CS 기초 지식",
+  "output_dir": "output/cs",
+  "topics": [
+    {
+      "id": 1,
+      "category": "CS 기초 - 운영체제",
+      "topic": "프로세스와 스레드",
+      "subtopic": "차이점, Context Switching, 멀티 프로세스 vs 멀티 스레드"
+    },
+    {
+      "id": 2,
+      "category": "CS 기초 - 운영체제",
+      "topic": "CPU 스케줄링",
+      "subtopic": "FCFS, SJF, Round Robin, Priority Scheduling, 멀티 레벨 큐"
+    },
+    {
+      "id": 3,
+      "category": "CS 기초 - 운영체제",
+      "topic": "동기화",
+      "subtopic": "임계 구역, Mutex, Semaphore, Monitor, Race Condition"
+    },
+    {
+      "id": 4,
+      "category": "CS 기초 - 운영체제",
+      "topic": "교착 상태",
+      "subtopic": "발생 4가지 조건, 예방/회피(은행원 알고리즘)/탐지/회복"
+    },
+    {
+      "id": 5,
+      "category": "CS 기초 - 운영체제",
+      "topic": "메모리 관리",
+      "subtopic": "연속 메모리 할당, 페이징, 세그멘테이션, 외부/내부 단편화"
+    },
+    {
+      "id": 6,
+      "category": "CS 기초 - 운영체제",
+      "topic": "가상 메모리",
+      "subtopic": "요구 페이징, 페이지 교체 알고리즘(FIFO, LRU, LFU), Thrashing"
+    },
+    {
+      "id": 7,
+      "category": "CS 기초 - 운영체제",
+      "topic": "파일 시스템 및 IPC",
+      "subtopic": "파일 할당 방법, IPC 종류(파이프, 소켓, 공유 메모리)"
+    },
+    {
+      "id": 8,
+      "category": "CS 기초 - 네트워크",
+      "topic": "네트워크 모델",
+      "subtopic": "OSI 7계층 vs TCP/IP 4계층 모델의 각 역할과 프로토콜"
+    },
+    {
+      "id": 9,
+      "category": "CS 기초 - 네트워크",
+      "topic": "TCP와 UDP",
+      "subtopic": "특징 비교, 신뢰성 보장 메커니즘, 흐름 제어, 혼잡 제어"
+    },
+    {
+      "id": 10,
+      "category": "CS 기초 - 네트워크",
+      "topic": "연결 설정",
+      "subtopic": "3-way Handshake (연결), 4-way Handshake (해제)"
+    },
+    {
+      "id": 11,
+      "category": "CS 기초 - 네트워크",
+      "topic": "웹 통신 프로토콜",
+      "subtopic": "HTTP/1.1, HTTP/2, HTTP/3의 차이점 및 발전 과정"
+    },
+    {
+      "id": 12,
+      "category": "CS 기초 - 네트워크",
+      "topic": "보안 프로토콜",
+      "subtopic": "HTTPS, SSL/TLS 핸드셰이크, 대칭키/비대칭키 암호화"
+    },
+    {
+      "id": 13,
+      "category": "CS 기초 - 네트워크",
+      "topic": "주소 및 이름 변환",
+      "subtopic": "DNS 작동 원리, ARP/RARP, MAC 주소와 IP 주소"
+    },
+    {
+      "id": 14,
+      "category": "CS 기초 - 네트워크",
+      "topic": "라우팅 및 스위칭",
+      "subtopic": "L2 스위치 vs L3 라우터, NAT, Port Forwarding"
+    },
+    {
+      "id": 15,
+      "category": "CS 기초 - 컴퓨터 구조",
+      "topic": "중앙처리장치 (CPU)",
+      "subtopic": "ALU, 제어장치, 레지스터, 명령어 사이클(Fetch, Decode, Execute)"
+    },
+    {
+      "id": 16,
+      "category": "CS 기초 - 컴퓨터 구조",
+      "topic": "명령어 집합 구조",
+      "subtopic": "CISC vs RISC의 특징과 장단점"
+    },
+    {
+      "id": 17,
+      "category": "CS 기초 - 컴퓨터 구조",
+      "topic": "파이프라이닝",
+      "subtopic": "개념, 파이프라인 해저드(데이터, 제어, 구조적) 및 해결 방안"
+    },
+    {
+      "id": 18,
+      "category": "CS 기초 - 컴퓨터 구조",
+      "topic": "메모리 계층 구조",
+      "subtopic": "레지스터 - 캐시 - 메인 메모리 - 보조기억장치"
+    },
+    {
+      "id": 19,
+      "category": "CS 기초 - 컴퓨터 구조",
+      "topic": "캐시 메모리",
+      "subtopic": "캐시 지역성, 매핑 방식(Direct, Associative, Set-Associative), 히트/미스"
+    },
+    {
+      "id": 20,
+      "category": "CS 기초 - 소프트웨어 공학",
+      "topic": "객체 지향 프로그래밍",
+      "subtopic": "4대 특성(캡슐화, 상속, 다형성, 추상화), SOLID 원칙"
+    },
+    {
+      "id": 21,
+      "category": "CS 기초 - 소프트웨어 공학",
+      "topic": "디자인 패턴",
+      "subtopic": "GoF - 생성(Singleton, Factory), 구조(Adapter, Proxy), 행위(Strategy, Observer)"
+    },
+    {
+      "id": 22,
+      "category": "CS 기초 - 소프트웨어 공학",
+      "topic": "함수형 프로그래밍",
+      "subtopic": "순수 함수, 불변성(Immutability), 일급 객체"
+    }
+  ]
+}

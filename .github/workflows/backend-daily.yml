@@ -1,8 +1,8 @@
-name: "Daily CS 기초 지식"
+name: "Daily 백엔드 + 클라우드"
 
 on:
   schedule:
-    - cron: '0 20 * * *'  # 매일 오전 5:00 KST
+    - cron: '10 20 * * *'  # 매일 오전 5:10 KST
   workflow_dispatch:
 
 jobs:
@@ -17,6 +17,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Pull latest changes
+        run: git pull --rebase origin master
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -25,15 +28,16 @@ jobs:
       - name: Install dependencies
         run: pip install openai==1.82.0
 
-      - name: Generate today's CS note
+      - name: Generate today's backend note
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: python generate.py topics_cs.json
+        run: python generate.py topics_backend.json
 
       - name: Commit and push note
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/cs/ topics_cs.json
-          git diff --cached --quiet || git commit -m "📚 CS 기초: $(TZ='Asia/Seoul' date '+%Y-%m-%d')"
+          git add output/backend/ topics_backend.json
+          git diff --cached --quiet || git commit -m "📚 백엔드+클라우드: $(TZ='Asia/Seoul' date '+%Y-%m-%d')"
+          git pull --rebase origin master
           git push

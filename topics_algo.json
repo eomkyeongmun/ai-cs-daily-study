@@ -1,0 +1,103 @@
+{
+  "current_index": 0,
+  "category_label": "자료구조 및 알고리즘",
+  "output_dir": "output/algo",
+  "topics": [
+    {
+      "id": 1,
+      "category": "자료구조 및 알고리즘 - 복잡도",
+      "topic": "Big-O 표기법",
+      "subtopic": "시간 복잡도와 공간 복잡도 계산 방법"
+    },
+    {
+      "id": 2,
+      "category": "자료구조 및 알고리즘 - 자료구조",
+      "topic": "선형 자료구조",
+      "subtopic": "배열 vs 연결 리스트, 스택, 큐(Queue, Deque)"
+    },
+    {
+      "id": 3,
+      "category": "자료구조 및 알고리즘 - 자료구조",
+      "topic": "해시 테이블",
+      "subtopic": "해시 함수, 해시 충돌 해결(Chaining, Open Addressing)"
+    },
+    {
+      "id": 4,
+      "category": "자료구조 및 알고리즘 - 자료구조",
+      "topic": "트리",
+      "subtopic": "이진 트리, BST, AVL, Red-Black 트리, 힙(Priority Queue)"
+    },
+    {
+      "id": 5,
+      "category": "자료구조 및 알고리즘 - 자료구조",
+      "topic": "그래프",
+      "subtopic": "인접 행렬 vs 인접 리스트, 방향/무방향 그래프"
+    },
+    {
+      "id": 6,
+      "category": "자료구조 및 알고리즘 - 자료구조",
+      "topic": "고급 자료구조",
+      "subtopic": "트라이(Trie), 분리 집합(Disjoint Set / Union-Find)"
+    },
+    {
+      "id": 7,
+      "category": "자료구조 및 알고리즘 - 알고리즘",
+      "topic": "정렬",
+      "subtopic": "버블, 선택, 삽입, 병합, 퀵, 힙 정렬의 원리와 복잡도 비교"
+    },
+    {
+      "id": 8,
+      "category": "자료구조 및 알고리즘 - 알고리즘",
+      "topic": "탐색",
+      "subtopic": "선형 탐색, 이진 탐색, Lower/Upper Bound"
+    },
+    {
+      "id": 9,
+      "category": "자료구조 및 알고리즘 - 알고리즘",
+      "topic": "그래프 탐색",
+      "subtopic": "BFS(너비 우선 탐색), DFS(깊이 우선 탐색)"
+    },
+    {
+      "id": 10,
+      "category": "자료구조 및 알고리즘 - 알고리즘",
+      "topic": "최단 경로",
+      "subtopic": "다익스트라, 플로이드-워셜, 벨만-포드"
+    },
+    {
+      "id": 11,
+      "category": "자료구조 및 알고리즘 - 알고리즘",
+      "topic": "최소 신장 트리",
+      "subtopic": "크루스칼(Kruskal), 프림(Prim) 알고리즘"
+    },
+    {
+      "id": 12,
+      "category": "자료구조 및 알고리즘 - 설계 패러다임",
+      "topic": "동적 계획법",
+      "subtopic": "메모이제이션, 타뷸레이션, 배낭 문제(Knapsack)"
+    },
+    {
+      "id": 13,
+      "category": "자료구조 및 알고리즘 - 설계 패러다임",
+      "topic": "그리디 알고리즘",
+      "subtopic": "매 순간 최적의 해를 찾는 전략"
+    },
+    {
+      "id": 14,
+      "category": "자료구조 및 알고리즘 - 설계 패러다임",
+      "topic": "분할 정복",
+      "subtopic": "문제를 쪼개서 해결하고 합치는 기법"
+    },
+    {
+      "id": 15,
+      "category": "자료구조 및 알고리즘 - 설계 패러다임",
+      "topic": "백트래킹",
+      "subtopic": "상태 공간 트리 탐색 및 가지치기(Pruning)"
+    },
+    {
+      "id": 16,
+      "category": "자료구조 및 알고리즘 - 설계 패러다임",
+      "topic": "효율성 기법",
+      "subtopic": "투 포인터, 슬라이딩 윈도우, 누적 합(Prefix Sum)"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "current_index": 0,
+  "category_label": "백엔드 + 클라우드",
+  "output_dir": "output/backend",
+  "topics": [
+    {
+      "id": 1,
+      "category": "백엔드 - 아키텍처",
+      "topic": "API 설계",
+      "subtopic": "RESTful API 성숙도 모델, GraphQL, gRPC 특징 비교"
+    },
+    {
+      "id": 2,
+      "category": "백엔드 - 아키텍처",
+      "topic": "인증 및 인가",
+      "subtopic": "세션/쿠키, JWT(Access/Refresh Token), OAuth 2.0, SSO"
+    },
+    {
+      "id": 3,
+      "category": "백엔드 - 아키텍처",
+      "topic": "웹 아키텍처 패턴",
+      "subtopic": "MVC, 계층형 아키텍처, 헥사고날 아키텍처"
+    },
+    {
+      "id": 4,
+      "category": "백엔드 - 아키텍처",
+      "topic": "시스템 확장",
+      "subtopic": "Scale-up vs Scale-out, 로드 밸런싱(L4 vs L7) 전략"
+    },
+    {
+      "id": 5,
+      "category": "백엔드 - 아키텍처",
+      "topic": "메시지 큐 및 이벤트 스트리밍",
+      "subtopic": "Kafka, RabbitMQ 차이점, Pub/Sub 모델, 비동기 처리"
+    },
+    {
+      "id": 6,
+      "category": "백엔드 - 아키텍처",
+      "topic": "마이크로서비스 (MSA)",
+      "subtopic": "모놀리식 비교, API Gateway, Service Discovery, SAGA 패턴"
+    },
+    {
+      "id": 7,
+      "category": "백엔드 - 데이터베이스",
+      "topic": "RDBMS 기초",
+      "subtopic": "ACID 특성, 트랜잭션 격리 수준과 이상 현상(Dirty Read 등)"
+    },
+    {
+      "id": 8,
+      "category": "백엔드 - 데이터베이스",
+      "topic": "인덱스",
+      "subtopic": "B-Tree, B+Tree, 클러스터링 vs 논클러스터링, 복합 인덱스"
+    },
+    {
+      "id": 9,
+      "category": "백엔드 - 데이터베이스",
+      "topic": "정규화와 반정규화",
+      "subtopic": "제1정규형 ~ BCNF, 성능을 위한 반정규화 트레이드오프"
+    },
+    {
+      "id": 10,
+      "category": "백엔드 - 데이터베이스",
+      "topic": "DB 확장 및 최적화",
+      "subtopic": "파티셔닝, 샤딩, 레플리케이션(Master-Slave), 커넥션 풀"
+    },
+    {
+      "id": 11,
+      "category": "백엔드 - 데이터베이스",
+      "topic": "NoSQL",
+      "subtopic": "Key-Value(Redis), Document(MongoDB), CAP 정리, PACELC 정리"
+    },
+    {
+      "id": 12,
+      "category": "백엔드 - 데이터베이스",
+      "topic": "캐싱 전략",
+      "subtopic": "Look-aside, Write-through, Write-behind, Redis 영속성(RDB, AOF)"
+    },
+    {
+      "id": 13,
+      "category": "백엔드 - 인프라",
+      "topic": "클라우드 기초",
+      "subtopic": "IaaS, PaaS, SaaS 비교, VPC, 서브넷, 보안 그룹"
+    },
+    {
+      "id": 14,
+      "category": "백엔드 - 인프라",
+      "topic": "서버리스 및 엣지 컴퓨팅",
+      "subtopic": "AWS Lambda 서버리스 아키텍처, CDN 작동 원리"
+    },
+    {
+      "id": 15,
+      "category": "백엔드 - 인프라",
+      "topic": "Docker",
+      "subtopic": "VM vs 컨테이너, 이미지/컨테이너 아키텍처, 볼륨 및 네트워크"
+    },
+    {
+      "id": 16,
+      "category": "백엔드 - 인프라",
+      "topic": "Kubernetes",
+      "subtopic": "K8s 아키텍처(Master/Worker), Pod, Deployment, Service, Ingress"
+    },
+    {
+      "id": 17,
+      "category": "백엔드 - 인프라",
+      "topic": "CI/CD",
+      "subtopic": "빌드, 테스트, 배포 자동화 파이프라인 (GitHub Actions, Jenkins)"
+    },
+    {
+      "id": 18,
+      "category": "백엔드 - 인프라",
+      "topic": "인프라 자동화 (IaC)",
+      "subtopic": "인프라를 코드로 관리 (Terraform, Ansible)"
+    },
+    {
+      "id": 19,
+      "category": "백엔드 - 인프라",
+      "topic": "모니터링 및 로깅",
+      "subtopic": "Prometheus, Grafana, ELK(Elasticsearch, Logstash, Kibana) 스택"
+    }
+  ]
+}

@@ -6,22 +6,20 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from openai import OpenAI
 
-TOPICS_FILE = Path("topics.json")
-OUTPUT_DIR = Path("output")
 TEMPLATE_FILE = Path("templates/note_template.md")
 
 
-def load_topics() -> dict:
-    with open(TOPICS_FILE, encoding="utf-8") as f:
+def load_topics(topics_file: Path) -> dict:
+    with open(topics_file, encoding="utf-8") as f:
         return json.load(f)
 
 
-def save_topics(data: dict):
-    with open(TOPICS_FILE, "w", encoding="utf-8") as f:
+def save_topics(topics_file: Path, data: dict):
+    with open(topics_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def get_today_topic(data: dict) -> dict:
+def get_today_topic(data: dict) -> tuple:
     idx = data["current_index"] % len(data["topics"])
     return data["topics"][idx], idx
 
@@ -126,30 +124,36 @@ def build_note(topic: dict, sections: dict, date_str: str) -> str:
     return note
 
 
-def save_note(note: str, topic: dict, date_str: str) -> Path:
-    OUTPUT_DIR.mkdir(exist_ok=True)
+def save_note(note: str, topic: dict, date_str: str, output_dir: Path) -> Path:
+    output_dir.mkdir(parents=True, exist_ok=True)
     filename = f"{date_str}-{topic['topic'].replace('/', '-').replace(' ', '-')}.md"
-    filepath = OUTPUT_DIR / filename
+    filepath = output_dir / filename
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(note)
     return filepath
 
 
 def main():
-    data = load_topics()
+    if len(sys.argv) < 2:
+        print("Usage: python generate.py <topics_file>")
+        print("  e.g. python generate.py topics_cs.json")
+        sys.exit(1)
+
+    topics_file = Path(sys.argv[1])
+    data = load_topics(topics_file)
     topic, idx = get_today_topic(data)
+    output_dir = Path(data.get("output_dir", "output"))
     date_str = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
 
-    print(f"Generating note for: {topic['topic']} - {topic['subtopic']}")
+    print(f"[{data['category_label']}] Generating: {topic['topic']} - {topic['subtopic']}")
 
     raw = generate_note(topic)
     sections = parse_sections(raw)
     note = build_note(topic, sections, date_str)
-    filepath = save_note(note, topic, date_str)
+    filepath = save_note(note, topic, date_str, output_dir)
 
-    # Advance index for next run
     data["current_index"] = (idx + 1) % len(data["topics"])
-    save_topics(data)
+    save_topics(topics_file, data)
 
     print(f"Saved: {filepath}")
     return str(filepath)
