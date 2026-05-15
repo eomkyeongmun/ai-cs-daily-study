@@ -126,7 +126,7 @@ def build_note(topic: dict, sections: dict, date_str: str) -> str:
 
 def save_note(note: str, topic: dict, date_str: str, output_dir: Path) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"{date_str}-{topic['topic'].replace('/', '-').replace(' ', '-')}.md"
+    filename = f"{topic['topic'].replace('/', '-').replace(' ', '-')}.md"
     filepath = output_dir / filename
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(note)
