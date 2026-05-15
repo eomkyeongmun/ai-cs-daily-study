@@ -141,6 +141,11 @@ def main():
 
     topics_file = Path(sys.argv[1])
     data = load_topics(topics_file)
+
+    if data["current_index"] == -1:
+        print(f"[{data['category_label']}] All topics completed. Skipping.")
+        return "SKIP"
+
     topic, idx = get_today_topic(data)
     output_dir = Path(data.get("output_dir", "output"))
     date_str = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
@@ -152,7 +157,12 @@ def main():
     note = build_note(topic, sections, date_str)
     filepath = save_note(note, topic, date_str, output_dir)
 
-    data["current_index"] = (idx + 1) % len(data["topics"])
+    next_idx = idx + 1
+    if next_idx >= len(data["topics"]):
+        data["current_index"] = -1
+        print(f"[{data['category_label']}] Cycle complete! No more topics.")
+    else:
+        data["current_index"] = next_idx
     save_topics(topics_file, data)
 
     print(f"Saved: {filepath}")
