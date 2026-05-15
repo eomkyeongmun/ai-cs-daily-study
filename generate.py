@@ -2,7 +2,7 @@
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from openai import OpenAI
 
@@ -138,7 +138,7 @@ def save_note(note: str, topic: dict, date_str: str) -> Path:
 def main():
     data = load_topics()
     topic, idx = get_today_topic(data)
-    date_str = datetime.now().strftime("%Y-%m-%d")
+    date_str = datetime.now(timezone(timedelta(hours=9))).strftime("%Y-%m-%d")
 
     print(f"Generating note for: {topic['topic']} - {topic['subtopic']}")
 
