@@ -22,8 +22,6 @@ gRPC는 Google에서 공개한 고성능 RPC 프레임워크로, Protocol Buffer
 
 ---
 
----
-
 ## 내부 동작 원리
 
 ## 1. RESTful API 성숙도 모델
